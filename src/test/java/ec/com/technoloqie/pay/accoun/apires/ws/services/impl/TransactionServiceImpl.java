@@ -54,4 +54,11 @@ public class TransactionServiceImpl implements ITransactionService{
 		transDao.save(existTrans);
 		return existTrans;	
 	}
+
+	@Override
+	@Transactional
+	public Transaction payTransaction(Transaction transaction) {
+		Transaction operationNew = null;
+		return operationNew;
+	}
 }

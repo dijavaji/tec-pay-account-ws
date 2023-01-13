@@ -6,5 +6,6 @@ public interface IAccountService {
 	
 	Account createAccount(Account account);
 	Account getAccountId(Integer code);
+	Account updateAccount(Account account, int id);
 
 }
