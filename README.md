@@ -41,6 +41,10 @@ The tec-pay-account-ws solution contains a project:
 tec-pay-account-ws
 Is the backend project this project contains all the classes which are used to manipulate the logic business of application, necessary data model and components the rest-api type.
 
+##Solution Software Design Document
+Provides a description of software tec-pay-account in terms of architecture of software with various components with specified functionality.
+https://drive.google.com/file/d/17sCR1GD-PtkL9N4Mdp41ibOows6yylT7/view?usp=sharing
+
 ## Available Scripts
 
 In the project directory tec-pay-account-ws , you can run:
@@ -54,6 +58,8 @@ It correctly bundles jar in production mode and optimizes the build for the best
 
 ### `mvn spring-boot:run`
 Run Spring Boot applications Navigate to `http://127.0.0.1:8080/`. You have the nexts apis built for creating the operation.
+
+`http://127.0.0.1:8080/api/payTransaction/`
 
 ### `mvn test`
 
