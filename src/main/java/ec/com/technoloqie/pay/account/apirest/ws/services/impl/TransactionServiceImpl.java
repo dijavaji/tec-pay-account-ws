@@ -109,7 +109,8 @@ public class TransactionServiceImpl implements ITransactionService{
 			accTransCredit.setAccountId(receiverAccount.getId());
 			accTransCredit.setCreatedBy(transaction.getCreatedBy());
 			this.serviceAccTran.createTransaction(accTransCredit);
-			
+			operationNew.setReceiverAccountBalance(receiverAccountUpdate.getBalance());
+			operationNew.setSenderAccountBalance(senderAccountUpdate.getBalance());
 			
 		}catch(Exception e) {
 			TransactionLog.getLog().error("Error al realizar operacion de pago.",e);
