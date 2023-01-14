@@ -1,4 +1,4 @@
-package ec.com.technoloqie.pay.accoun.apires.ws.entities;
+package ec.com.technoloqie.pay.account.apirest.ws.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -20,22 +20,22 @@ import javax.validation.constraints.NotEmpty;
  *
  */
 @Entity
-@Table(name="ACCOUNT")
-public class Account implements Serializable{
+@Table(name="ACCOUNTTRANSACTION")
+public class AccountTransaction implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
-	@Column(name="ACCOUNTID",nullable=false, unique=true)
+	@Column(name="ACCTRANID",nullable=false, unique=true)
 	private Integer id;
 	
-	@Column(name="ACCNUMBER",nullable=false, unique=true)
-    private Integer accNumber; 
+	@Column(name="TRANSACTIONID",nullable=false)
+    private Integer transactionId; 
 	
-	@Column(name="BALANCE",nullable=false)
-	private Double balance;
+	@Column(name="ACCOUNTID",nullable=false)
+    private Integer accountId; 
 	
 	@NotEmpty(message ="no puede estar vacio")
-	@Column(name="CREATED_BY",nullable=false)
+	@Column(name="CREATEDBY",nullable=false)
 	private String createdBy;
 	
 	@Column(name="CREATEDDATE",nullable=false)
@@ -52,102 +52,74 @@ public class Account implements Serializable{
 	@Column(name="STATUS")
 	private Boolean status;
 	
-    //@OneToMany(mappedBy = "enterprise", cascade = CascadeType.ALL)//, cascade = CascadeType.ALL
-	//@JsonManagedReference
-	/*@OneToMany(fetch = FetchType.LAZY	)
-	@JoinColumn(name = "ENTERPRISE_ID")
-	private List<Department> departmentCol;
-    
-	public Enterprise() {
-		this.departmentCol = new ArrayList<>() ;
-	}*/
-	
     @PrePersist 
 	public void prePersist() {
 		createdDate = new Date();
 		status = Boolean.TRUE;
 	}
 
-
-	private static final long serialVersionUID = -979071489122757786L;
-
 	public Integer getId() {
 		return id;
 	}
-
 
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-
-	public Integer getAccNumber() {
-		return accNumber;
+	public Integer getTransactionId() {
+		return transactionId;
 	}
 
-
-	public void setAccNumber(Integer accNumber) {
-		this.accNumber = accNumber;
+	public void setTransactionId(Integer transactionId) {
+		this.transactionId = transactionId;
 	}
 
-
-	public Double getBalance() {
-		return balance;
+	public Integer getAccountId() {
+		return accountId;
 	}
 
-
-	public void setBalance(Double balance) {
-		this.balance = balance;
+	public void setAccountId(Integer accountId) {
+		this.accountId = accountId;
 	}
-
 
 	public String getCreatedBy() {
 		return createdBy;
 	}
 
-
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-
 
 	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
-
 
 	public String getModifiedBy() {
 		return modifiedBy;
 	}
 
-
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-
 
 	public Date getModifiedDate() {
 		return modifiedDate;
 	}
 
-
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
-
 
 	public Boolean getStatus() {
 		return status;
 	}
 
-
 	public void setStatus(Boolean status) {
 		this.status = status;
 	}
-	
+	private static final long serialVersionUID = -3642689683334349996L;
 }

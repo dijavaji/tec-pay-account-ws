@@ -1,4 +1,4 @@
-package ec.com.technoloqie.pay.accoun.apires.ws;
+package ec.com.technoloqie.pay.account.apirest.ws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

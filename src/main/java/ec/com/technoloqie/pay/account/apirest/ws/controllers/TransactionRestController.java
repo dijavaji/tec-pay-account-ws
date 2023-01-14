@@ -1,4 +1,4 @@
-package ec.com.technoloqie.pay.accoun.apires.ws.controllers;
+package ec.com.technoloqie.pay.account.apirest.ws.controllers;
 
 import java.util.HashMap;
 import java.util.List;
@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import ec.com.technoloqie.pay.accoun.apires.ws.entities.Transaction;
-import ec.com.technoloqie.pay.accoun.apires.ws.services.ITransactionService;
+import ec.com.technoloqie.pay.account.apirest.ws.entities.Transaction;
+import ec.com.technoloqie.pay.account.apirest.ws.services.ITransactionService;
 
 @CrossOrigin(origins = {"http://127.0.0.1:4200"})
 @RestController

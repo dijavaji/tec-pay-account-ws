@@ -1,8 +1,8 @@
-package ec.com.technoloqie.pay.accoun.apires.ws.services;
+package ec.com.technoloqie.pay.account.apirest.ws.services;
 
 import java.util.List;
 
-import ec.com.technoloqie.pay.accoun.apires.ws.entities.Transaction;
+import ec.com.technoloqie.pay.account.apirest.ws.entities.Transaction;
 
 public interface ITransactionService {
 	

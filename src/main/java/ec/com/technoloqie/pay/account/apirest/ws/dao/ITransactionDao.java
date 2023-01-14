@@ -1,8 +1,8 @@
-package ec.com.technoloqie.pay.accoun.apires.ws.dao;
+package ec.com.technoloqie.pay.account.apirest.ws.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import ec.com.technoloqie.pay.accoun.apires.ws.entities.Transaction;
+import ec.com.technoloqie.pay.account.apirest.ws.entities.Transaction;
 
 public interface ITransactionDao extends JpaRepository<Transaction, Integer>{
 

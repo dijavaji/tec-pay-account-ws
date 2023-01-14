@@ -1,18 +1,24 @@
-package ec.com.technoloqie.pay.accoun.apires.ws.entities;
+package ec.com.technoloqie.pay.account.apirest.ws.entities;
 
 import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * 
@@ -54,6 +60,17 @@ public class Transaction implements Serializable{
 	
 	@Column(name="STATUS")
 	private Boolean status;
+	
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "TRATYPID", nullable = false)
+	private TransactionType transactionType;
+	
+	@Transient
+	private Double receiverAccountBalance;
+	
+	@Transient
+	private Double senderAccountBalance;
 		
     @PrePersist 
 	public void prePersist() {
@@ -133,6 +150,30 @@ public class Transaction implements Serializable{
 
 	public void setTransactionDate(Date transactionDate) {
 		this.transactionDate = transactionDate;
+	}
+
+	public TransactionType getTransactionType() {
+		return transactionType;
+	}
+
+	public void setTransactionType(TransactionType transactionType) {
+		this.transactionType = transactionType;
+	}
+
+	public Double getReceiverAccountBalance() {
+		return receiverAccountBalance;
+	}
+
+	public void setReceiverAccountBalance(Double receiverAccountBalance) {
+		this.receiverAccountBalance = receiverAccountBalance;
+	}
+
+	public Double getSenderAccountBalance() {
+		return senderAccountBalance;
+	}
+
+	public void setSenderAccountBalance(Double senderAccountBalance) {
+		this.senderAccountBalance = senderAccountBalance;
 	}
    
 

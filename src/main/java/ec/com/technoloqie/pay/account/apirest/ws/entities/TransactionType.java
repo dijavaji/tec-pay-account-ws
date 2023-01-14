@@ -1,4 +1,4 @@
-package ec.com.technoloqie.pay.accoun.apires.ws.entities;
+package ec.com.technoloqie.pay.account.apirest.ws.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -32,7 +32,7 @@ public class TransactionType implements Serializable{
 	@Column(name="DESCRIPTION",nullable=false)
     private String description;
 	
-	@Column(name="CREATED_BY",nullable=false)
+	@Column(name="CREATEDBY",nullable=false)
 	private String createdBy;
 	
 	//@NotNull(message= "no puede estar vacio")

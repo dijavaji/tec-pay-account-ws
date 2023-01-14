@@ -1,4 +1,4 @@
-package ec.com.technoloqie.pay.accoun.apires.ws.services.impl;
+package ec.com.technoloqie.pay.account.apirest.ws.services.impl;
 
 import java.util.Date;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ec.com.technoloqie.pay.accoun.apires.ws.dao.IAccountDao;
-import ec.com.technoloqie.pay.accoun.apires.ws.entities.Account;
-import ec.com.technoloqie.pay.accoun.apires.ws.services.IAccountService;
+import ec.com.technoloqie.pay.account.apirest.ws.dao.IAccountDao;
+import ec.com.technoloqie.pay.account.apirest.ws.entities.Account;
+import ec.com.technoloqie.pay.account.apirest.ws.services.IAccountService;
 
 @Service
 public class AccountServiceImpl implements IAccountService{
