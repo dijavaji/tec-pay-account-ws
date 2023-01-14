@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import ec.com.technoloqie.pay.account.apirest.ws.commons.TransactionConstants;
 import ec.com.technoloqie.pay.account.apirest.ws.commons.exception.TransactionException;
 import ec.com.technoloqie.pay.account.apirest.ws.commons.log.TransactionLog;
 import ec.com.technoloqie.pay.account.apirest.ws.entities.Transaction;
@@ -46,7 +47,7 @@ class TecPayAccountWsApplicationTests {
 		this.transaction.setReceiverAccount(3);
 		this.transaction.setCreatedBy("admin");
 		TransactionType transactionType=new TransactionType();
-		transactionType.setId(1);
+		transactionType.setId(TransactionConstants.TRANSACTION_TYPE_PAY);
 		this.transaction.setTransactionType(transactionType);
 		try{
 			TransactionLog.getLog().info("getPayTransactionTest.");
